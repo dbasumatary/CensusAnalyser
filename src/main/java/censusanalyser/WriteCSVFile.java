@@ -27,8 +27,30 @@ public class WriteCSVFile {
         fileWriter.close();
     }
 
+    public void csvWriterCode() throws IOException {
+        File file = new File("./src/main/resources/StateCodeData.csv");
+        FileWriter fileWriter = new FileWriter(file);
+        CSVWriter writer = new CSVWriter(fileWriter);
+
+        String[] data1 = {"State", "State Code"};
+        String[] data2 = {"Assam", "AS"};
+        String[] data3 = {"Bihar", "BH"};
+        String[] data4 = {"Gujarat", "GJ"};
+        String[] data5 = {"Punjab", "PB"};
+        String[] data6 = {"Odisha", "OR"};
+        writer.writeNext(data1);
+        writer.writeNext(data2);
+        writer.writeNext(data3);
+        writer.writeNext(data4);
+        writer.writeNext(data5);
+        writer.writeNext(data6);
+        writer.close();
+        fileWriter.close();
+    }
+
     public static void main(String[] args) throws IOException {
         WriteCSVFile writingToCSV = new WriteCSVFile();
-        writingToCSV.csvWriter();
+        //writingToCSV.csvWriter();
+        writingToCSV.csvWriterCode();
     }
 }

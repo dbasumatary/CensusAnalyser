@@ -20,7 +20,7 @@ public class TestAnalyser {
     @Test
     public void testIfTheRecordMatches() throws InvalidFileException, InvalidTypeException, InvalidDelimiterException, InvalidHeaderException {
         analyser.analyseData("./src/main/resources/StateCensusData.csv");
-        Assert.assertEquals(true,analyser.checkData());
+        Assert.assertEquals(true, analyser.checkData());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class TestAnalyser {
     @Test
     public void testForFileTypeCheck() throws InvalidTypeException, InvalidFileException, InvalidDelimiterException, InvalidHeaderException {
         analyser.analyseData("./src/main/resources/StateCensusData.csv");
-        Assert.assertEquals(true,analyser.checkData());
+        Assert.assertEquals(true, analyser.checkData());
     }
 
     @Test

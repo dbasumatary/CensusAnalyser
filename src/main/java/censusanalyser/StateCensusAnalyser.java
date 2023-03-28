@@ -1,4 +1,5 @@
 package censusanalyser;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -55,6 +56,20 @@ public class StateCensusAnalyser{
         if (censusData.size() == 5)
             return true;
         return false;
+    }
+
+    public int loadStateCodeData(String fileName) throws InvalidFileException, InvalidTypeException,InvalidHeaderException,InvalidDelimiterException{
+        int count = 0;
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                count++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 
     public static void main(String[] args) throws Exception {
